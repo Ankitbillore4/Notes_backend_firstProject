@@ -22,14 +22,14 @@
         
         <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
             <div class="p-8">
-                <form class="grid grid-cols-2 gap-4 max-w-md mx-auto">
+                <form id="noteForm" class="grid grid-cols-2 gap-4 max-w-md mx-auto">
                     <div class="col-span-2">
                         <h2 class="text-xl font-semibold mb-2">Note Title</h2>
-                        <input type="text" placeholder="Enter note title" class="w-full px-3 py-2 border rounded-md">
+                        <input type="text" id="noteTitle" name="title" placeholder="Enter note title" class="w-full px-3 py-2 border rounded-md" required>
                     </div>
                     <div class="col-span-2">
                         <h2 class="text-xl font-semibold mb-2">Note Content</h2>
-                        <textarea placeholder="Enter note content" rows="4" class="w-full px-3 py-2 border rounded-md"></textarea>
+                        <textarea id="noteContent" name="content" placeholder="Enter note content" rows="4" class="w-full px-3 py-2 border rounded-md" required></textarea>
                     </div>
                     <div class="col-span-2 text-center">
                         <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
@@ -40,5 +40,16 @@
             </div>
         </div>
     </div>
+    
+    <script>
+        document.getElementById('noteForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const title = document.getElementById('noteTitle').value;
+            const content = document.getElementById('noteContent').value;
+            // Here you would typically send this data to your server
+            // For now, we'll just redirect to a new page with the data in the URL
+            window.location.href = `/view-note?title=${encodeURIComponent(title)}&content=${encodeURIComponent(content)}`;
+        });
+    </script>
 </body>
 </html>
