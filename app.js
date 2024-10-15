@@ -9,6 +9,6 @@ app.get("/",function(req,res){
  
 app.get("/notes",function(req,res){
     res.render("notes")
-})
+}) 
 
 app.listen(3000);
