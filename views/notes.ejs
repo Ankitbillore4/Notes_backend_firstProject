@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Notes</title>
+    <title>My Notes</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
@@ -12,44 +12,13 @@
             <div class="text-white font-bold text-xl">My Notes App</div>
             <ul class="flex space-x-4">
                 <li><a href="/" class="text-white hover:text-gray-300">Home</a></li>
-                <li><a href="/notes" class="text-white hover:text-gray-300">New Notes</a></li>
+                <li><a href="/notes" class="text-white hover:text-gray-300">My Notes</a></li>
             </ul>
         </div>
     </nav>
+   <div class="main">
+    <div class="box h-[30vh] w-[40vw] bg-red-400"></div>
+   </div>
 
-    <div class="container mx-auto mt-8 p-4">
-        <h1 class="text-3xl font-bold mb-6 text-center">New Note</h1>
-        
-        <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
-            <div class="p-8">
-                <form id="noteForm" class="grid grid-cols-2 gap-4 max-w-md mx-auto">
-                    <div class="col-span-2">
-                        <h2 class="text-xl font-semibold mb-2">Note Title</h2>
-                        <input type="text" id="noteTitle" name="title" placeholder="Enter note title" class="w-full px-3 py-2 border rounded-md" required>
-                    </div>
-                    <div class="col-span-2">
-                        <h2 class="text-xl font-semibold mb-2">Note Content</h2>
-                        <textarea id="noteContent" name="content" placeholder="Enter note content" rows="4" class="w-full px-3 py-2 border rounded-md" required></textarea>
-                    </div>
-                    <div class="col-span-2 text-center">
-                        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                            Save Note
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    
-    <script>
-        document.getElementById('noteForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const title = document.getElementById('noteTitle').value;
-            const content = document.getElementById('noteContent').value;
-            // Here you would typically send this data to your server
-            // For now, we'll just redirect to a new page with the data in the URL
-            window.location.href = `/view-note?title=${encodeURIComponent(title)}&content=${encodeURIComponent(content)}`;
-        });
-    </script>
 </body>
 </html>
