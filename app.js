@@ -20,9 +20,19 @@ app.get("/",function(req,res){
       })
     
 })
+
+app.get("/create", (req, res) => {
+    res.render("create");
+})
+app.get("/create", (req, res) => {
+    res.render("create");
+})
  
 app.get("/notes",function(req,res){
     res.render("notes")
 }) 
 
-app.listen(3000);
+app.listen(3000,()=>{
+    console.log("server is running :");
+    
+});
