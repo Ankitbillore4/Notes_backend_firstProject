@@ -38,16 +38,6 @@
             </div>
         </div>
     </div>
-    
-    <script>
-        document.getElementById('noteForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const title = document.getElementById('noteTitle').value;
-            const content = document.getElementById('noteContent').value;
-            // Here you would typically send this data to your server
-            // For now, we'll just redirect to a new page with the data in the URL
-            window.location.href = `/view-note?title=${encodeURIComponent(title)}&content=${encodeURIComponent(content)}`;
-        });
-    </script>
+
 </body>
 </html>
