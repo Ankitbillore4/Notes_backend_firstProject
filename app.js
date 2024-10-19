@@ -14,6 +14,8 @@ app.get("/notes",function(req,res){
 
 app.get("/create",function(req,res){
     res.render("create")
+    console.log(req.query);
+    
 })
 
 app.listen(3000);
