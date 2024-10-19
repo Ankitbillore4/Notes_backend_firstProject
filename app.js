@@ -1,5 +1,7 @@
 const express = require("express");
 const app = express();
+const fs = require("fs");
+
 
 // Set the view engine to EJS
 app.set("view engine", "ejs");
@@ -20,6 +22,12 @@ app.get("/create", function(req, res) {
     // const description = req.query.description;
     const {title,description} = req.query;
     res.render('create',{title,description})
+    // console.log(req.query);
+    fs.writeFile(`./uploads/${title + '.txt'}`,`${description}`,()=>{
+        console.log("file created");
+        
+        
+    })
     
 });
 
